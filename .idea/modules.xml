@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Animation_gif.iml" filepath="$PROJECT_DIR$/Animation_gif.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Animation_gif_recycler.iml" filepath="$PROJECT_DIR$/Animation_gif_recycler.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
