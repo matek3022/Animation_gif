@@ -12,10 +12,15 @@
         android:padding="16dp"
         android:layout_width="wrap_content"
         android:layout_height="100dp" />
+    <company.matek3022.animation_gif.MovieGifView
+        android:id="@+id/gif"
+        android:layout_toLeftOf="@+id/sceneContainer"
+        android:visibility="gone"
+        android:layout_width="100dp"
+        android:layout_height="100dp" />
     <RelativeLayout
         android:layout_alignParentRight="true"
         android:id="@+id/sceneContainer"
-        android:layout_marginLeft="16dp"
         android:layout_width="100dp"
         android:layout_height="100dp">
 

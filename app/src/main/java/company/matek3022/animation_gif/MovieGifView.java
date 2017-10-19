@@ -5,6 +5,7 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.Movie;
 import android.os.Build;
+import android.os.Handler;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -53,7 +54,6 @@ public class MovieGifView extends View {
 
     public MovieGifView(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
-
         setViewAttributes(context, attrs, defStyle);
     }
 
@@ -84,8 +84,19 @@ public class MovieGifView extends View {
 
     public void setGifResource(int movieResourceId) {
         this.mMovieResourceId = movieResourceId;
-        movie = Movie.decodeStream(getResources().openRawResource(mMovieResourceId));
-        requestLayout();
+        final Handler handler = new Handler();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                movie = Movie.decodeStream(getResources().openRawResource(mMovieResourceId));
+                handler.post(new Runnable() {
+                    @Override
+                    public void run() {
+                        requestLayout();
+                    }
+                });
+            }
+        }).start();
     }
 
     public int getGifResource() {

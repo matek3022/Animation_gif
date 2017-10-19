@@ -1,23 +1,16 @@
 package company.matek3022.animation_gif;
 
+import android.os.Bundle;
 import android.support.transition.Scene;
 import android.support.transition.TransitionManager;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.LinearInterpolator;
-import android.widget.Button;
-import android.widget.FrameLayout;
-import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-
-import java.io.InputStream;
 
 import company.matek3022.animation_gif.transition.RotateTransition;
 
@@ -53,6 +46,48 @@ public class MainActivity extends AppCompatActivity {
         @Override
         public void onBindViewHolder(Holder holder, int position) {
             holder.text.setText("Position " + position);
+            switch (position) {
+                case 1:
+                    holder.gif.setVisibility(View.VISIBLE);
+                    holder.gif.setGifResource(R.drawable.gif);
+                    break;
+                case 2:
+                    holder.gif.setVisibility(View.VISIBLE);
+                    holder.gif.setGifResource(R.drawable.gif2);
+                    break;
+                case 3:
+                    holder.gif.setVisibility(View.VISIBLE);
+                    holder.gif.setGifResource(R.drawable.gif3);
+                    break;
+                case 4:
+                    holder.gif.setVisibility(View.VISIBLE);
+                    holder.gif.setGifResource(R.drawable.gif4);
+                    break;
+                case 5:
+                    holder.gif.setVisibility(View.VISIBLE);
+                    holder.gif.setGifResource(R.drawable.gif5);
+                    break;
+                case 6:
+                    holder.gif.setVisibility(View.VISIBLE);
+                    holder.gif.setGifResource(R.drawable.gif6);
+                    break;
+                case 7:
+                    holder.gif.setVisibility(View.VISIBLE);
+                    holder.gif.setGifResource(R.drawable.gif7);
+                    break;
+                case 8:
+                    holder.gif.setVisibility(View.VISIBLE);
+                    holder.gif.setGifResource(R.drawable.gif8);
+                    break;
+                case 9:
+                    holder.gif.setVisibility(View.VISIBLE);
+                    holder.gif.setGifResource(R.drawable.gif9);
+                    break;
+                case 0:
+                    holder.gif.setVisibility(View.VISIBLE);
+                    holder.gif.setGifResource(R.drawable.gif10);
+                    break;
+            }
         }
 
         @Override
@@ -94,11 +129,13 @@ public class MainActivity extends AppCompatActivity {
 
             TextView text;
             RelativeLayout sceneContainer;
+            MovieGifView gif;
 
             public Holder(View itemView) {
                 super(itemView);
                 text = (TextView) itemView.findViewById(R.id.text);
                 sceneContainer = (RelativeLayout) itemView.findViewById(R.id.sceneContainer);
+                gif = (MovieGifView) itemView.findViewById(R.id.gif);
             }
         }
     }
